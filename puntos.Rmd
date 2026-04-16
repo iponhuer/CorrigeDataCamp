@@ -98,5 +98,22 @@ alumnos_notas <- alumnos_matriculados %>%
   left_join(evalua_df, by = c("Apellido(s)" = "apellidos"))
 
 write_xlsx(alumnos_notas, "AlumnosNotas.xlsx")
+
+
+#Para ver si todos tenian un txt
+
+total_alumnos <- nrow(alumnos_matriculados)
+entregas_puntos <- nrow(evalua_df)
+entregas_pdf <- length(ficheros_certificados)
+
+print("Total alumnos matriculados:"); print(total_alumnos)
+print("Ficheros de puntos encontrados:") ; print(entregas_puntos)
+print("Certificados encontrados:") ;print(entregas_pdf)
+
+if (entregas_puntos == total_alumnos && entregas_pdf == total_alumnos) {
+  print("Todas las entregas contienen ambos ficheros")
+} else {
+  print("No todos han hecho las entregas")
+}
 ```
 
