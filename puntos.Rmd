@@ -41,5 +41,13 @@ print("Variantes de nombres encontradas:") ;print(variantes_puntos)
 print("Número de variantes:") ;print(length(variantes_puntos))
 
 print("¿Todos se llaman puntos.txt?:") ; print(identical(variantes_puntos, "puntos.txt"))
+
+
+#Hacemos un bucle para hacer un df con los apellidos del usuario,la puntuación obtenida, el nombre del fichero usado para almacenar los puntos y el contenido del fichero puntos.txt como cadena de texto.
+apellidos_vec <- c()
+puntos_vec <- c()
+NomFile_vec <- c()
+Puntos_vec <- c()
+
 ```
 
