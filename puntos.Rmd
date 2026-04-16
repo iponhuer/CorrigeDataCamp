@@ -31,5 +31,10 @@ ruta <- "~/Desktop/universidad/tratamiento de datos/CorrigeDataCamp/2025-26 Trac
 ficheros_puntos <- list.files(ruta, pattern = "\\.txt$", recursive = TRUE, full.names = TRUE)
 ficheros_certificados <- list.files(ruta, pattern = "\\.pdf$", recursive = TRUE, full.names = TRUE)
 
+
+#Para ver cuantas variantes de los nombres de puntos.txt
+nombres_puntos <- basename(ficheros_puntos)
+variantes_puntos <- unique(nombres_puntos)
+
 ```
 
