@@ -100,7 +100,7 @@ alumnos_notas <- alumnos_matriculados %>%
 write_xlsx(alumnos_notas, "AlumnosNotas.xlsx")
 
 
-#Para ver si todos tenian un txt
+#Para ver si todos tenian los dos ficheros
 
 total_alumnos <- nrow(alumnos_matriculados)
 entregas_puntos <- nrow(evalua_df)
