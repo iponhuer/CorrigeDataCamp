@@ -22,3 +22,8 @@ library(readxl)
 library(writexl)
 ```
 
+```{r}
+#Ponemos la ruta directamente porque ya esta descomprimido
+ruta <- "~/Desktop/universidad/tratamiento de datos/CorrigeDataCamp/2025-26 Tractament de les dades Gr.A-T (36423)-Tarea Intermediate R(Datacamp)-3281647"
+```
+
