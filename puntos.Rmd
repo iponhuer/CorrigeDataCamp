@@ -49,5 +49,37 @@ puntos_vec <- c()
 NomFile_vec <- c()
 Puntos_vec <- c()
 
+for (i in 1:length(ficheros_puntos)) {
+  ruta_archivo <- ficheros_puntos[i]
+  
+  #Usamos strsplit para extraer el apellido de la ruta
+  
+  partes_ruta <- unlist(strsplit(ruta_archivo, "/"))
+  carpeta_alumno <- partes_ruta[length(partes_ruta) - 1]
+  
+  #Nos quedamos con el nombre solo
+  nombre_completo <- strsplit(carpeta_alumno, "_")[[1]][1]
+  
+  #Cogemos los apellidos
+  apellido_limpio <- strsplit(nombre_completo, ",")[[1]][1]
+  
+  #Quitamos espacios
+  apellido_limpio <- gsub("^\\s+|\\s+$", "", apellido_limpio)
+  apellido_limpio <- gsub("\\s+", " ", apellido_limpio)
+  
+  #Leemos y lo unimos todo
+  contenido <- readLines(ruta_archivo, warn = FALSE)
+  contenido_texto <- paste(contenido, collapse = " ")
+  
+  #Sacamos los numeros
+  numero <- as.numeric(gsub("[^0-9]", "", contenido_texto))
+  
+  #Guardamos en los vectores creados al principio
+  apellidos_vec <- c(apellidos_vec, apellido_limpio)
+  puntos_vec <- c(puntos_vec, numero)
+  NomFile_vec <- c(NomFile_vec, basename(ruta_archivo))
+  Puntos_vec <- c(Puntos_vec, contenido_texto)
+}
+
 ```
 
