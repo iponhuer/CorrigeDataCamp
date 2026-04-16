@@ -1,0 +1,24 @@
+---
+title: "Puntos"
+author: "Irene Ponce Huerta"
+date: "2026-04-16"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+###Corrige Data Camp
+
+## Corrección de las entregas de Data Camp
+
+
+```{r}
+#Cargar las librerias
+library(dplyr)
+library(stringr)
+library(readxl)
+library(writexl)
+```
+
