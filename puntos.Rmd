@@ -25,5 +25,11 @@ library(writexl)
 ```{r}
 #Ponemos la ruta directamente porque ya esta descomprimido
 ruta <- "~/Desktop/universidad/tratamiento de datos/CorrigeDataCamp/2025-26 Tractament de les dades Gr.A-T (36423)-Tarea Intermediate R(Datacamp)-3281647"
+
+#Usamos list.files para sacar los archivos txt que son de texto y los de pdf que son los certificados
+
+ficheros_puntos <- list.files(ruta, pattern = "\\.txt$", recursive = TRUE, full.names = TRUE)
+ficheros_certificados <- list.files(ruta, pattern = "\\.pdf$", recursive = TRUE, full.names = TRUE)
+
 ```
 
