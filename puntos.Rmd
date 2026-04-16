@@ -89,5 +89,14 @@ evalua_df <- evalua_df %>% arrange(apellidos)
 
 #Guardamos en "NotasRIntermedio.xlsx"
 write_xlsx(evalua_df, "NotasRIntermedio.xlsx")
+
+#Comparamos con "AlumnosTD25_26.xlsx"
+alumnos_matriculados <- read_excel("AlumnosTD25_26.xlsx")
+
+#Unimos los dos df
+alumnos_notas <- alumnos_matriculados %>%
+  left_join(evalua_df, by = c("Apellido(s)" = "apellidos"))
+
+write_xlsx(alumnos_notas, "AlumnosNotas.xlsx")
 ```
 
