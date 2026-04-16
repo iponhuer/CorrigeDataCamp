@@ -36,5 +36,10 @@ ficheros_certificados <- list.files(ruta, pattern = "\\.pdf$", recursive = TRUE,
 nombres_puntos <- basename(ficheros_puntos)
 variantes_puntos <- unique(nombres_puntos)
 
+print("Variantes de nombres encontradas:") ;print(variantes_puntos)
+
+print("Número de variantes:") ;print(length(variantes_puntos))
+
+print("¿Todos se llaman puntos.txt?:") ; print(identical(variantes_puntos, "puntos.txt"))
 ```
 
