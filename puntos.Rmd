@@ -83,5 +83,11 @@ for (i in 1:length(ficheros_puntos)) {
 
 #Creamos el df después del bucle que se habran guardado todos los datos
 evalua_df <- data.frame(apellidos = apellidos_vec, puntos = puntos_vec, NomFile = NomFile_vec,Puntos = Puntos_vec,stringsAsFactors = FALSE)
+
+#Ordenamos de manera creciente por los apellidos
+evalua_df <- evalua_df %>% arrange(apellidos)
+
+#Guardamos en "NotasRIntermedio.xlsx"
+write_xlsx(evalua_df, "NotasRIntermedio.xlsx")
 ```
 
